@@ -1,7 +1,11 @@
+import ItemCount from "./ItemCount";
 
 function ItemListContainer({greeting}) {
     return (
-        <p>{greeting}</p>
+        <>
+            <p>{greeting}</p>
+            <ItemCount stock={10} initial={1}></ItemCount>
+        </>
     );
 }
 
