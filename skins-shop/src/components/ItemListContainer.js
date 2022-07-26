@@ -1,26 +1,59 @@
 import ItemCount from "./ItemCount";
-import {data} from "../utils/products";
-import {useState} from "react";
+import {productos} from "../utils/products";
+import {useEffect, useState} from "react";
 import ItemList from "./ItemList";
+import {useParams} from "react-router-dom";
+
+let getProds = (prod) => {
+    return new Promise((resolve, reject) => {
+        console.log(prod);
+        if (prod.length > 0) {
+            setTimeout(() => {
+                resolve(prod);
+            }, 2000);
+        } else {
+            reject(
+                "La página no se encuentra disponible en este momento, por favor intente más tarde"
+            );
+        }
+    });
+};
 
 function ItemListContainer({greeting}) {
 
     const [productList, setProductList] = useState([]);
-    const myPromise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(data);
-        }, 300);
-    });
-    myPromise.then((res)=>{
-        setProductList(res);
-    })
+    const {id} = useParams();
+
+    useEffect(() => {
+        if (id === undefined) {
+            getProds(productos)
+                .then((res) => {
+                    setProductList(res);
+                })
+                .catch((error) => alert(error));
+        } else {
+            getProds(productos.filter((item) => item.category === parseInt(id)))
+                .then((res) => {
+                    setProductList(res);
+                })
+                .catch((error) => alert(error));
+        }
+    }, [id]);
+
+
     return (
-        <><div className="bg-white">
-            <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-                <ItemCount stock={10} initial={1}></ItemCount>
-                <ItemList items={productList}></ItemList>
-            </div>
-        </div>
+        <>
+            {productList.length > 0 ? (
+                <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+                    <ItemCount stock={10} initial={1}></ItemCount>
+                    <ItemList items={productList}></ItemList>
+                </div>
+            ) : (
+                <div className="w-full h-screen flex justify-center items-center">
+                    <p className="font-bold">Cargando productos ...</p>
+                </div>
+            )}
+
 
         </>
     );

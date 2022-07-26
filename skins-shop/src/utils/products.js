@@ -1,4 +1,4 @@
-export const data = [
+export const productos = [
     {
         title: "Ice Coaled",
         price: "$150",
@@ -7,6 +7,7 @@ export const data = [
         picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG90N0h4ZkRoanhzekplbWtWMDktNWs1U0Rudm56SUlUZG4yeFpfUHA5aV92RzhNS3NpZ0RpX0VzOVpHbWdKNGVRSndOcVoxaUItRkc5eGUzcDE1SHR0WmlhblhZd3YzUnh0bmZVZ1ZYcDFsSmdGWjQxLzUxMngzODQ-/auto/auto/85/notrim/796732af024b7f27919c0e89e6bd6182.webp",
         id: 1,
         stock: 10,
+        category: 1,
     },
     {
         title: "Ice Coaled",
@@ -17,7 +18,7 @@ export const data = [
         picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG90N0h4ZkRobndNekplbWtWMDh5a200YU9oT1Q5UExYUW1sUmQ0Y0o1bnRiTjlKN3lqUnF3LTBvNFpXdndjSWJFZFFRN01sN1RyMW52d3VmdmdNQzZ1cy1ibUhaaTZIRWdzQ3ZZbGtDX24xZ1NPYXNIRXVZZi81MTJ4Mzg0/auto/auto/85/notrim/ea1d2d4773d461e191522ed432959c72.webp",
         id:2,
         stock: 10,
-
+        category: 1,
     },
     {
         title: "Ice Coaled",
@@ -28,7 +29,7 @@ export const data = [
         picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG90N0h4ZkRobndNekplbWtWMDltN2hKS09oT1RMUDdMV25uOXU1TVJqamV5UDg5U2tqQVMyLTBRNE1EandMSWVUY1FOdGFWR0dfVlhza3JxOWc4UzZ1TXpQblNObDd5Z2p0bUdkd1VKcW1jeVM2dy81MTJ4Mzg0/auto/auto/85/notrim/16037f3a5b12fda55f0aaed0bfbc7c65.webp",
         id: 3,
         stock: 10,
-
+        category: 1,
     },
     {
         title: "Ice Coaled",
@@ -39,6 +40,7 @@ export const data = [
         picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG90N0h4ZkRoanhzekplbWtWMDkyNGdZS0NoTWo0T3J6WmdsUmQ2ZGQyajZlVXA0M3dpd2ZncWtNNFoyNzBMSU9VY0ZBNmFGN1NxRmE1eU83dGpKTHU3c2pJelhGbnZTa24tei1EeU1sb1dzRmMvNTEyeDM4NA--/auto/auto/85/notrim/c0ff37021e6a99a2fd4122b38d3b3a25.webp",
         id: 4,
         stock: 10,
+        category: 1,
     },
     {
         title: "Ice Coaled",
@@ -49,6 +51,7 @@ export const data = [
         picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG90N0h4ZkRoanhzekplbWtWMDlLX2s0aWZnUDduTzRUZG4yeFpfUHA5aV92RzhNS2xpd0RoODBJLU5tbjZJTk9YSUZJNVlscUNyd0tfeWJ1OTBjZm92c3ZPeUNCaXVpRXF0Q25mZ1ZYcDFpTmhHdTBGLzUxMngzODQ-/auto/auto/85/notrim/372d8e1234f44eec33f48410fb4a95fb.webp",
         id: 5,
         stock: 10,
+        category: 1,
     },
     {
         title: "Ice Coaled",
@@ -59,6 +62,7 @@ export const data = [
         picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG90N0h4ZkRoanhzekplZ0pNNmRPNHE1S0NrX0xtRExmWWtXTkYxOGx3bU83RXU5V24yQTNsOGtFLVptajNkNExBSVE4MllGeldxRlc1eGVtNzBNVzA3OGpOeVhVeXN5Y2x0bmZEMzB2Z0VnSVRYa00vNTEyeDM4NA--/auto/auto/85/notrim/5d2c089c500828dc80fedded2472d45a.webp",
         id: 6,
         stock: 10,
+        category: 1,
     },
     {
         title: "Ice Coaled",
@@ -69,6 +73,7 @@ export const data = [
         picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG90N0h4ZkRoanhzekplbkFXdS1PbW5JR0ZnX2o1RExfWWhYbEUtTkYtbU5iTl9JdjluR3U0cWdFN05uZWdKWUxESVZOc05GblhxMVh0d0xfcWhaX3A2TTdNd0hVeHVTTjJ0aTNVelJEajBrd2RiZWM5bTdYQUhrcUdCY1AxLzUxMngzODQ-/auto/auto/85/notrim/2474bc88e2b58d56360b2acd55dd4072.webp",
         id: 7,
         stock: 10,
+        category: 1,
     },
     {
         title: "Ice Coaled",
@@ -79,6 +84,7 @@ export const data = [
         picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG90N0h4ZkRoanhzekplbWtWMDkybG5ZbUdtT0hMUDdMV25uOXU1TVJqamV5UG85cWdqbGZucVV0dk1HSHpJSUNXZXc0NWFWLUJfMWJxdzd1NWdzZTE2SlRLd1hCbnZpZ2c1V0dkd1VMM1ZZdGJVQS81MTJ4Mzg0/auto/auto/85/notrim/603be131442ee64e08c3b0b52bf696dc.webp",
         id: 8,
         stock: 10,
+        category: 1,
     },
     {
         title: "Ice Coaled",
@@ -89,6 +95,7 @@ export const data = [
         picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG90N0h4ZkRoanhzekplbWtWMDg2amxvS09oY2o0T3J6WmdsUmQ2ZGQyajZlVXJkLWppd2ZzcjBCc1lHNmlJZGVVSkE4LU53NkVxVm50eUxydjE1LTR2NXZPbWlOcjczWjItei1EeUFkZFRuOGUvNTEyeDM4NA--/auto/auto/85/notrim/0f5fbd57495775101c825f79c2ea44f9.webp",
         id: 9,
         stock: 10,
+        category: 1,
     },
     {
         title: "Ice Coaled",
@@ -99,5 +106,50 @@ export const data = [
         picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG90N0h4ZkRobndNekplbWtWMDk2Nm00LVBoT2Y3SWFfdW1tSlc0TkZPaHVqVDhvbTczQVN5LTBScU5XLWhMWVRBY2c1dk1ndlRfVm00d2VmdGhwT192OHlZd0hWbHNpY3I0QzNmelF2MzMwXzc5ZXlwRkEvNTEyeDM4NA--/auto/auto/85/notrim/518d3017011c760f97adf3a144650a0a.webp",
         id: 10,
         stock: 10,
+        category: 1,
+    },
+    {
+        title: "Ice Coaled",
+        price: "$150",
+        type: "rifle",
+        weapon: "ak-47",
+        description: "Uno de los mas nuevos skins que creo counter strike",
+        picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG90N0h4ZkRobndNekplbWtWMDk2Nm00LVBoT2Y3SWFfdW1tSlc0TkZPaHVqVDhvbTczQVN5LTBScU5XLWhMWVRBY2c1dk1ndlRfVm00d2VmdGhwT192OHlZd0hWbHNpY3I0QzNmelF2MzMwXzc5ZXlwRkEvNTEyeDM4NA--/auto/auto/85/notrim/518d3017011c760f97adf3a144650a0a.webp",
+        id: 11,
+        stock: 10,
+        category: 1,
+    },
+    {
+        title: "Ice Coaled",
+        price: "$150",
+        type: "pistols",
+        weapon: "ak-47",
+        description: "Uno de los mas nuevos skins que creo counter strike",
+        picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG9zci1rTEF0bDdQRGRUamxIN2R1SmhKS0NtZVBuSjZuVWwyWnU1TXgyZ3YzLS1ZM25qMUg2cVVkcWF6ejJJb0NWZFZKdllsR0dxRlB0eWVhNmdaLV91SmpQeTN0ajdIUW5zUzNjbUJIa2lRWU1NTElqYXhoaEF3LzUxMngzODQ-/auto/auto/85/notrim/fef491a06507a73675a64b8d7aac9b4c.webp",
+        id: 12,
+        stock: 10,
+        category: 2,
+    },
+    {
+        title: "Ice Coaled",
+        price: "$150",
+        type: "pistols",
+        weapon: "ak-47",
+        description: "Uno de los mas nuevos skins que creo counter strike",
+        picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG9zci1rTEF0bDdQVGJUamxIN2R1NmtiLUdrdlQ4TW9UZG4yeFpfUHA5aV92RzhNTHcyQXkzLWhVNGEyN3pMZENUSUFVNGFWSFZfQUs2d0wzcGpjUzl1ODdJekNRMXZDTW40M3pZZ1ZYcDFqcExTT3d6LzUxMngzODQ-/auto/auto/85/notrim/a8a3f15b861fcd842da9b30283b8f5f9.webp",
+        id: 13,
+        stock: 10,
+        category: 2,
+    },
+    {
+        title: "Ice Coaled",
+        price: "$150",
+        type: "pistols",
+        weapon: "ak-47",
+        description: "Uno de los mas nuevos skins que creo counter strike",
+        picture: "https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9zdGVhbWNvbW11bml0eS1hLmFrYW1haWhkLm5ldC9lY29ub215L2ltYWdlLy05YTgxZGxXTHdKMlVVR2NWc19uc1Z0emRPRWR0V3dLR1paTFFIVHhEWjdJNTZLVTBad3dvNE5VWDRvRkpaRUhMYlhINUFwZU80WW1saHhZUWtuQ1J2Q28wNERFVmx4a0tncG9zci1rTEF0bDdQVGJUamxIN2R1NmtiLUtrUERtTnFqQ21YbHU1TXgyZ3YzLS1ZM25qMUg2X2tJNk5UdjdJOUNWY1ZkcllRelRxVlc0eHJycmdaZS02cDZheTNabHVpWWw0bnZWeWhPMjFRWU1NTExrN09HcHBBLzUxMngzODQ-/auto/auto/85/notrim/0c136f67c6fe601baa30ab344b9e8ada.webp",
+        id: 14,
+        stock: 10,
+        category: 2,
     },
 ];

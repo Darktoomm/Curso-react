@@ -1,6 +1,7 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
-function Item({product}) {
+function Item({product, id}) {
     return (
         <div key={product.id} className="group relative">
             <div
@@ -14,10 +15,10 @@ function Item({product}) {
             <div className="mt-4 flex justify-between">
                 <div>
                     <h3 className="text-sm text-gray-700">
-                        <a href="">
-                            <span aria-hidden="true" className="absolute inset-0"/>
-                            {product.title}
-                        </a>
+                        <Link to={`/item/${product.id}`} className=" m-auto">
+                                <span aria-hidden="true" className="absolute inset-0"/>
+                                {product.title}
+                        </Link>
                     </h3>
                     <p className="mt-1 text-sm text-gray-500">{product.description}</p>
                 </div>
