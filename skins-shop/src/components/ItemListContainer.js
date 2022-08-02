@@ -6,7 +6,6 @@ import {useParams} from "react-router-dom";
 
 let getProds = (prod) => {
     return new Promise((resolve, reject) => {
-        console.log(prod);
         if (prod.length > 0) {
             setTimeout(() => {
                 resolve(prod);
@@ -45,7 +44,6 @@ function ItemListContainer({greeting}) {
         <>
             {productList.length > 0 ? (
                 <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-                    <ItemCount stock={10} initial={1}></ItemCount>
                     <ItemList items={productList}></ItemList>
                 </div>
             ) : (

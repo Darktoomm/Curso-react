@@ -5,7 +5,6 @@ import {useParams} from "react-router-dom";
 
 let getProducts = (prod) => {
     return new Promise((resolve, reject) => {
-        console.log(prod)
         if (prod.length > 0) {
             setTimeout(() => {
                 resolve(prod);
@@ -23,7 +22,6 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        console.log();
         if (id === undefined) {
         } else {
             getProducts(productos.filter((item) => item.id === parseInt(id)))

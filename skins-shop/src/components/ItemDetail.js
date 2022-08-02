@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from "./ItemCount";
+import {CartContext} from "./CartContext";
 
 const ItemDetail = ({item}) => {
 
     const [changeButton,setChangeButton] = useState(false);
+    const [ItemsCount, setItemsCount] = useState(0);
+    const data = useContext(CartContext);
+    console.log("la data",data);
 
     const onAdd = (quantity) => {
         setChangeButton(true);
-        alert("la cantidad es : ",quantity) 
+        if (!data.isInCart(item.id)) {
+            setItemsCount(quantity);
+            data.addToCart(item, quantity);
+        } else {
+            alert("Este producto ya existe en el carrito.");
+        }
     }
+
+
 
     return (
         <>
@@ -33,8 +44,8 @@ const ItemDetail = ({item}) => {
                             className="bg-gray-100 rounded-lg"
                         />
                     </div>
-                    {!changeButton && <ItemCount stock={10} initial={1} onAdd={onAdd} changeButton={changeButton}></ItemCount>}
-                    {changeButton && <Link to="/cart"><button className="text-xl ml-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"> Checkout </button></Link>}
+                    {ItemsCount === 0 ? (<ItemCount stock={item.stock} initial={ItemsCount} onAdd={onAdd} changeButton={changeButton}></ItemCount>):
+                        (<Link to="/cart"><button className="text-xl ml-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"> Checkout </button></Link>)}
                 </div>
             </div>
         </>
