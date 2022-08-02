@@ -9,8 +9,8 @@ const CartItem = ({ item, onRemove }) => {
                 {item.type} {item.title}
             </p>
             <p>{item.quantity} Unid</p>
-            <p>$ {item.price} c/u</p>
-            <p>$ {item.price * item.quantity}</p>
+            <p>{item.price} c/u</p>
+            <p>${parseInt(item.price.replace('$',"")) * item.quantity}</p>
             <button
                 onClick={() => {
                     onRemove(item);
