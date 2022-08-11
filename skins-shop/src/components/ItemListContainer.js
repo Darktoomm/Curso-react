@@ -3,40 +3,44 @@ import {productos} from "../utils/products";
 import {useEffect, useState} from "react";
 import ItemList from "./ItemList";
 import {useParams} from "react-router-dom";
-
-let getProds = (prod) => {
-    return new Promise((resolve, reject) => {
-        if (prod.length > 0) {
-            setTimeout(() => {
-                resolve(prod);
-            }, 2000);
-        } else {
-            reject(
-                "La página no se encuentra disponible en este momento, por favor intente más tarde"
-            );
-        }
-    });
-};
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../utils/firebaseConfig";
 
 function ItemListContainer({greeting}) {
 
     const [productList, setProductList] = useState([]);
     const {id} = useParams();
-
+    const categoryList = [1,2];
     useEffect(() => {
-        if (id === undefined) {
-            getProds(productos)
-                .then((res) => {
-                    setProductList(res);
-                })
-                .catch((error) => alert(error));
-        } else {
-            getProds(productos.filter((item) => item.category === parseInt(id)))
-                .then((res) => {
-                    setProductList(res);
-                })
-                .catch((error) => alert(error));
-        }
+        const fireStoreFetch = async () => {
+            const querySnapshot = await getDocs(collection(db, "products"));
+            const dataFireStore = querySnapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }));
+            return dataFireStore;
+          };
+          fireStoreFetch()
+            .then((res) => {
+              categoryList.forEach((item) => {
+                if (parseInt(id) === item) {
+                  const productsListFilter = [];
+                  res.filter((data) => {
+                    if (data.category === parseInt(id)) {
+                      productsListFilter.push(data);
+                      setProductList(productsListFilter);
+                    }
+                  });
+                } else if (id === undefined) {
+                  setProductList(res);
+                }
+              });
+            })
+            .catch((err) =>
+              alert(
+                "La página no se encuentra disponible en este momento, por favor intente más tarde"
+              )
+            );
     }, [id]);
 
 

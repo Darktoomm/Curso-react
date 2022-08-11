@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {productos} from "../utils/products";
 import ItemDetail from "./ItemDetail";
 import {useParams} from "react-router-dom";
+import { collection, getDocs, where, query } from "firebase/firestore";
+import { db } from "../utils/firebaseConfig";
 
 let getProducts = (prod) => {
     return new Promise((resolve, reject) => {
@@ -22,21 +24,31 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        if (id === undefined) {
-        } else {
-            getProducts(productos.filter((item) => item.id === parseInt(id)))
-                .then((res) => {
-                    setDato(res);
-                })
-                .catch((error) => alert(error));
-        }
+        const fireStoreFetch = async () => {
+            const querySnapshot = await getDocs(collection(db, "products"));
+            const dataFireStore = querySnapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }));
+            return dataFireStore;
+          };
+          fireStoreFetch()
+            .then((res) => {
+              res.filter((doc) => {
+                if (doc.id === id) {
+                  return setDato(doc);
+                }
+              });
+            })
+            .catch((err) => alert("Algo ha salido mal."));
     }, [id]);
 
     return (
-        <>
-            {dato.length > 0 ? (
+        <>  
+        {console.log(dato)}
+            {dato ? (
                 <>
-                    <ItemDetail item={dato[0]} />
+                    <ItemDetail item={dato} />
                 </>
             ) : (
                 <div className="w-full h-screen flex justify-center items-center">
