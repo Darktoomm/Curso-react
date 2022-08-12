@@ -1,6 +1,9 @@
 import React, {useContext} from 'react'
 import {CartContext} from "./CartContext";
 import CartItem from "../components/CartItem";
+import Button from "../components/Button";
+import {collection, doc, serverTimestamp, setDoc} from "firebase/firestore"
+import { db } from "../utils/firebaseConfig";
 
 export const CartContainer = () => {
   const data = useContext(CartContext);
@@ -11,6 +14,39 @@ export const CartContainer = () => {
   const onClear = () => {
     data.clear();
   };
+  const calculoTotal = () => {
+    data.calcTotal();
+  };
+  const createOrder = () => {
+    let itemsForDb = data.cartList.map(item => ({
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      qty: item.quantity
+    }))
+    let order = {
+      buyer : {
+        email: "tcatalano@leafnoise.io",
+        name: "Tomas Catalano",
+        phone: "1150505048",
+      },
+      date: serverTimestamp(),
+      items: itemsForDb,
+      total: data.calcTotal(),
+    }
+
+    const createOrderInFirestore = async () => {
+      const newOrderRef = doc(collection (db, "orders"))
+      await setDoc(newOrderRef,order);
+      return newOrderRef
+    }
+
+    createOrderInFirestore()
+      .then(res => alert('Se creo la orden ID=' + res.id))
+      .catch(e => console.log(e))
+
+    data.clear()
+  }
 
   console.log("la data",data);
 
@@ -30,11 +66,17 @@ export const CartContainer = () => {
             <CartItem item={item} key={index} onRemove={onRemove} />
           ))}
           <div className="flex w-full justify-end p-8">
-            <button
+            <Button
               color="gray"
               description="vaciar carrito"
               icon="delete"
               onClick={onClear}/>
+          </div>
+          <div className="flex w-full justify-end p-8">
+            <Button
+              color="gray"
+              description="Crear orden"
+              onClick={createOrder}/>
           </div>
         </div>
       ) : (

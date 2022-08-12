@@ -13,3 +13,5 @@ const Button = ({ color, description, onClick, icon }) => {
         </button>
     );
 };
+
+export default Button;

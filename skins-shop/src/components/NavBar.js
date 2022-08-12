@@ -28,7 +28,9 @@ function NavBar() {
                       </p>
                   </Link>
               </div>
-              <CartWidget/>
+              <Link to="/cart">
+                  <CartWidget/>
+              </Link>
           </div>
       </nav>
   );

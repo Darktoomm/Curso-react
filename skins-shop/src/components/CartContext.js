@@ -23,9 +23,16 @@ const CartContextProvider = ({ children }) => {
     const clear = () => {
         setCartList([]);
     };
+
+    const calcTotal = () =>{
+       var total = cartList.map((i) =>{ const total = parseInt(i.price.replace('$',"")) * i.quantity; return total});
+       const totalisima = total.map(item => item).reduce((prev, curr) => prev + curr, 0);
+    return totalisima;
+    }
+
     return (
         <CartContext.Provider
-            value={{ cartList, addToCart, removeToCart, clear, isInCart }}
+            value={{ cartList, addToCart, removeToCart, clear, isInCart, calcTotal }}
         >
             {children}
         </CartContext.Provider>
